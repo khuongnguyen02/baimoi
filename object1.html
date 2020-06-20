@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Định nghĩa object lớp học</title>
+</head>
+<body>
+<script type="text/javascript">
+    let class_obj={
+        classname: "T2004E",
+        room: "A8",
+        teacher:{
+            name: "Trịnh Quang Hòa",
+            age: 30,
+            experience: "10 years",
+            teach: function () {
+                console.log("Dạy học mỗi thứ ba năm bảy");
+                return this;
+            },
+            eat: function () {
+                console.log("Ăn mỗi tối lúc 3h");
+                return this;
+            },
+        },
+        student:[
+
+             {
+                 name: "Nguyễn Tuấn Anh",
+                age: 24,
+            },
+             {
+                name: "Trần Đình Trung",
+                age: 27,
+            },
+        ]
+
+    }
+    console.log(class_obj.classname);
+    console.log(class_obj.teacher.name);
+    class_obj.teacher.teach().eat();
+    class_obj.student.printName();
+
+
+
+</script>
+
+
+
+</body>
+</html>

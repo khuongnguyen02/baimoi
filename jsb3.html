@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Js3</title>
+</head>
+<body id="dme">
+
+<h1 id="heading"> Tên lớp: </h1>
+<h2 id="sub-heading 1">Tên giáo viên:  </h2>
+<h2 id="sub-heading 2">Phòng học:  </h2>
+<h3> Danh sách sinh viên </h3>
+<ul id="students"></ul>
+<!--id chỉ có 1 cho một đối tượng trong 1 trang html-->
+
+<script type="text/javascript">
+    //nó sẽ coi các phần tử HTML là các DOM elements
+    // console.log(h1.innerText);
+    // h1.innerText="Xin chào các bạn";
+    // h1.style.color="red";//đối tượng style chứa tất cả các thuộc tính css
+    // h1.style.backgroundColor="yellow"// đổi từ gạch ngang thành xóa dấu gạch và viết hoa chữ đầu
+    // h1.style.borderBottom="1px solid green";// thuộc tính style đặt trong string
+    // h1.innerHTML="<i>"+h1.innerText+"</i>";//thay đổi thuộc tính các thẻ trong trang html
+    // h1.style.textAlign="center";
+
+    let h1=document.getElementById("heading");//nó là 1 đối tượng lấy từ HTML nhờ vào id
+
+    let class_obj={
+        classname: "T2004E",
+        room: "A8",
+        teacher:{
+            name: "Trịnh Quang Hòa",
+            age: 30,
+            },
+        student:[
+            {
+                name: "Nguyễn Tuấn Anh",
+                age: 24,
+            },
+            {
+                name: "Trần Đình Trung",
+                age: 27,
+            },
+        ]
+
+    }
+    h1.innerText=h1.innerText+class_obj.classname;
+    let h2_s1=document.getElementById("sub-heading 1");
+    h2_s1.innerText=h2_s1.innerText+class_obj.teacher.name;
+
+    let h2_s2=document.getElementById("sub-heading 2");
+    h2_s2.innerText=h2_s2.innerText+class_obj.room;
+
+    let ul=document.getElementById("students");
+    class_obj.student.map(function (e) {
+        let li= "<li>"+e.name+"</li>";//e là phần tử của mảng
+        ul.innerHTML=ul.innerHTML+li;
+    });
+    let k1=document.getElementById("dme");
+    k1.style.textAlign="center"
+
+
+</script>
+
+
+
+</body>
+</html>

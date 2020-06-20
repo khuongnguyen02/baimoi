@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Js buổi 2</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    //object là một đối tượng mang trong mình hai thứ: Thuộc tính và hành vi.
+    let obj={ //thằng được khai báo mới là đối tượng. Cách khai báo: bên dưới.
+      name: "Nguyen Tuan Anh",
+      age: 25,
+      address: "8 Ton That Thuyet",
+        run: function () {  //truyền tham số
+          console.log(this.name+" Fuck You!..");
+        },//khai báo 1 cái hành động là method run
+      girlfriends: ["Nguyen Hang Tuan Anh", "Nguyen Duy Phuoc"
+      ],
+        gotoHeTel: function(){
+          this.girlfriends.map(function (e) {
+              console.log("Di hotel voi "+e);
+          })
+       },
+      children:{
+          //đối tượng con của obj
+          name: "Nguyen Van Tuan Anh",
+          birthday: "20-5-1999",
+              play: function(){
+              console.log("playing games...");
+              return this;//là trả lại các đối tượng của tầng thứ nhất.
+          },
+          children: {
+              name: "Nguyen Thi Tuan Anh",
+              eat:function () {
+                  console.log(this.name+" Dang uong sua");
+                  return this;
+              },
+              sleep: function () {
+                  console.log("di ngu...");
+                  return this;
+
+              }
+          }
+      }
+    };
+    console.log(obj.name);
+
+    obj.run();
+
+    //đối tượng ngầm định là this thì cái this là đại diện cho đối tượng ngầm định bên trong 1 thực thể.
+    console.log("ten con la: "+obj.children.name);
+    console.log("Ten chau la: "+obj.children.children.name);
+    obj.children.children.eat();
+    obj.children.children.eat().sleep();
+    // thực hiện 2 method liền. Phạm vi của this chỉ nằm trong this
+    obj.children.play();
+    // obj.girlfriends.gotoHeTel();
+    // //đổi giá trị thuộc tính của đối tượng
+    obj.name="Nguyen Duy Van Phuoc";
+    console.log(obj.name);
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
