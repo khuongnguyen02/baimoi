@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Chuong trinh Vietlot</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+        do{
+            var num1=parseInt(Math.random()*100);
+            var num2=parseInt(Math.random()*100);
+            var num3=parseInt(Math.random()*100);
+            var num4=parseInt(Math.random()*100);
+            var num5=parseInt(Math.random()*100);
+        } while(num1==num2 || num1==num3||num1==num4||num1==num5||num2==num3||num2==num4||num2==num5||num3==num4||num3==num5||num4==num5)
+
+        alert("may man o trong tay ban");
+        let arr=[num1,num2,num3,num4,num5];
+        alert(arr);
+
+        do{
+            var y1=prompt("chon con so may man thu nhat: ");
+            var y2=prompt("chon con so may man thu hai: ");
+            var y3=prompt("chon con so may man thu ba: ");
+            var y4=prompt("chon con so may man thu bon: ");
+            var y5=prompt("chon con so may man thu nam: ");
+        } while(y1==y2 || y1==y3||y1==y4||y1==y5||y2==y3||y2==y4||y2==y5||y3==y4||y3==y5||y4==y5||y1>100||y2>100||y3>100||y4>100||y5>100)
+       let ary=[y1,y2,y3,y4,y5];
+        let count=0;
+       for(let i=0;i<5;i++){
+           for(let j=0;j<5;j++) {
+               if (arr[i] == ary[j]){
+                   count=5;
+               }
+               else{
+                   count=0;
+               }
+           }
+       }
+       if(count==5){
+           alert("May vd");
+       } else {
+           alert("Chuc ban may man lan sau")
+       }
+
+
+</script>
+
+
+</body>
+</html>
