@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 8</title>
+</head>
+<body>
+
+<h1 id="head1">Name of the country: </h1>
+<h2 id="head2">Temperature: </h2>
+<h2 id="head3">Pressure:  </h2>
+<h2 id="head4">Humidity: </h2>
+<h2 id="head5">Temperature max: </h2>
+<h2 id="head6">Temperature min: </h2>
+<h2 id="head7">Sea level: </h2>
+
+
+
+<script type="text/javascript">
+    var currentWeather={
+        coord:{
+            lon: 139.01,
+            lat: 35.02,
+        },
+        weather:
+        [
+            {
+                id: 800,
+                main: "clear",
+                description: "clear sky, icon: 01n"
+            }
+        ],
+        base: "station",
+        main: {
+            temp: 285.514,
+            pressure: 1013.75,
+            humidity: 100,
+            temp_min: 285.514,
+            temp_max: 285.514,
+            sea_level: 1023.22,
+            grnd_level: 1073.75
+        },
+        dt: 1485792967,
+        sys:{
+            message: 0.0025,
+            country: "JP",
+            sunrise: 1485726240,
+            sunset: 1485763863
+        },
+        id: 1907296,
+        name: "Tawarano",
+        cod: 200
+    }
+    let k1 = document.getElementById("head1");
+    k1.innerText = k1.innerText + currentWeather.sys.country;
+    let k2 = document.getElementById("head2");
+    k2.innerText = k2.innerText + currentWeather.main.temp;
+    let k3 = document.getElementById("head3");
+    k3.innerText = k3.innerText + currentWeather.main.pressure;
+    let k4 = document.getElementById("head4");
+    k4.innerText = k4.innerText + currentWeather.main.humidity;
+    let k5 = document.getElementById("head5");
+    k5.innerText = k5.innerText + currentWeather.main.temp_min;
+    let k6 = document.getElementById("head6");
+    k6.innerText = k6.innerText + currentWeather.main.temp_max;
+    let k7 = document.getElementById("head7");
+    k7.innerText=k7.innerText+currentWeather.main.sea_level;
+
+
+
+
+</script>
+
+
+</body>
+</html>
