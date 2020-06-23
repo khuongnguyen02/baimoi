@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML DOM</title>
+</head>
+<body>
+
+<button onclick="clickHere()"> Click here to 18++</button>
+<!--Tren day la 1 su kien ket noi giua html va script-->
+<!--bat buoc phai chuyen ham-->
+<button onmouseenter="mouseTo()"> Mouse over here to</button>
+<button onmouseleave="mouseLeave(this)">Mouse leave</button>
+<button onmouseleave="mouseLeave(this)">Mouse leave2</button>
+<!--this la doi tuong ben HTML nap vao ngam dinh-->
+<input onkeydown="keyDown(this)" type="text" name="abc" placeholder="Demo js with input"/>
+<input onkeypress="keyPress(this)" type="text" name="abc"/>
+<select name="select" onchange="select(this)">
+    <option value="1">Value 1</option>
+    <option value="2">Value 2</option>
+</select>
+<!--onkeyup nguoc lai-->
+<script type="text/javascript">
+    function clickHere() { //khi de nut button  co onclick thi chay ham
+         alert("M bi ngu r");
+    }
+    function mouseTo(){
+        alert("Hay");
+
+    }
+    function mouseLeave(e) {
+            alert(e.innerText); //e dai dien cho chinh doi tuong this trong HTML
+    }
+    function keyDown(e) {
+        if(event.keyCode==13){
+            alert("vua nhan Enter");
+        } else{
+            console.log(e.value);
+        }
+        //day la code phim vua nhan
+    }
+    function keyPress(e) {
+        console.log(e.value);
+        //them gia tri no moi phat
+    }
+
+    function select(e) {
+        console.log("change value");
+
+    }
+
+</script>
+
+</body>
+</html>
