@@ -8,42 +8,54 @@
 <body>
 <div class="container">
 
-    <h1 style="padding-left: 20px;opacity: 0.7"> Xác định vị trí trong Tabs</h1>
-    <button class="menu" onmousemove="clickHome()">Home</button>
-    <button class="menu"  onmousemove="clickProfiles()">Profiles</button>
-    <button class="menu"  onmousemove="clickMessages()">Massages</button>
-    <button class="menu"  onmousemove="clickSettings()">Settings</button>
-    <div id="home"> This is Home Content</div>
-    <div id="profiles">This is Profiles Content</div>
-    <div id="messages">This Messages Content</div>
-    <div id="settings">This is Settings Content</div>
+    <h1 style="padding-left: 20px;opacity: 0.7; background-color: gray"> Xác định vị trí trong Tabs</h1>
+    <div class="menu" onclick="clickHome()">Home</div>
+    <div class="menu" onclick="clickProfiles()">Profiles</div>
+    <div class="menu" onclick="clickMessages()">Massages</div>
+    <div class="menu" onclick="clickSettings()">Settings</div>
+    <div class="content"> This is Home Content</div>
+    <div class="content">This is Profiles Content</div>
+    <div class="content">This Messages Content</div>
+    <div class="content">This is Settings Content</div>
 </div>
-<!--document.getElementsByTagName("H1")[0].getAttribute("class");-->
+
 <script type="text/javascript">
+    var element=document.getElementsByClassName("content");
     function clickHome(){
-        document.getElementById("home").style.display="block";
-        document.getElementById("profiles").style.display="none";
-        document.getElementById("messages").style.display="none";
-        document.getElementById("settings").style.display="none";
+        for( let i=0;i<element.length;i++){
+            if(i!=0){
+                element[i].style.display="none";
+            } else{
+                element[i].style.display="block";
+            }
+        }
     }
     function clickProfiles(){
-        document.getElementById("home").style.display="none";
-        document.getElementById("profiles").style.display="block";
-        document.getElementById("messages").style.display="none";
-        document.getElementById("settings").style.display="none";
+        for( let i=0;i<element.length;i++){
+            if(i!=1){
+                element[i].style.display="none";
+            } else{
+                element[i].style.display="block";
+            }
+        }
     }
     function clickMessages(){
-        document.getElementById("home").style.display="none";
-        document.getElementById("profiles").style.display="none";
-        document.getElementById("messages").style.display="block";
-        document.getElementById("settings").style.display="none";
+        for( let i=0;i<element.length;i++){
+            if(i!=2){
+                element[i].style.display="none";
+            } else{
+                element[i].style.display="block";
+            }
+        }
     }
-    function clickSettings() {
-        document.getElementById("home").style.display="none";
-        document.getElementById("profiles").style.display="none";
-        document.getElementById("messages").style.display="none";
-        document.getElementById("settings").style.display="block";
-
+    function clickSettings(){
+        for( let i=0;i<element.length;i++){
+            if(i!=3){
+                element[i].style.display="none";
+            } else{
+                element[i].style.display="block";
+            }
+        }
     }
 
 
