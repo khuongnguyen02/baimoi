@@ -9,55 +9,51 @@
 <div class="container">
 
     <h1 style="padding-left: 20px;opacity: 0.7; background-color: gray"> Xác định vị trí trong Tabs</h1>
-    <div class="menu" onclick="clickHome()">Home</div>
-    <div class="menu" onclick="clickProfiles()">Profiles</div>
-    <div class="menu" onclick="clickMessages()">Massages</div>
-    <div class="menu" onclick="clickSettings()">Settings</div>
+    <div class="menu" onclick="click('Home',this)">Home</div>
+    <div class="menu" onclick="click('Profiles',this)">Profiles</div>
+    <div class="menu" onclick="click('Messages',this)">Massages</div>
+    <div class="menu" onclick="click('Settings',this)">Settings</div>
     <div class="content"> This is Home Content</div>
     <div class="content">This is Profiles Content</div>
     <div class="content">This Messages Content</div>
     <div class="content">This is Settings Content</div>
 </div>
-<!--l-->
+
 
 <script type="text/javascript">
-    var element=document.getElementsByClassName("content");
-    function clickHome(){
-        for( let i=0;i<element.length;i++){
-            if(i!=0){
-                element[i].style.display="none";
-            } else{
-                element[i].style.display="block";
-            }
+    function click(pageName,elmnt){
+        var i,element=document.getElementsByClassName("content");
+        for ( i = 0; i < element.length; i++) {
+            element[i].style.display = "none";
         }
     }
-    function clickProfiles(){
-        for( let i=0;i<element.length;i++){
-            if(i!=1){
-                element[i].style.display="none";
-            } else{
-                element[i].style.display="block";
-            }
-        }
-    }
-    function clickMessages(){
-        for( let i=0;i<element.length;i++){
-            if(i!=2){
-                element[i].style.display="none";
-            } else{
-                element[i].style.display="block";
-            }
-        }
-    }
-    function clickSettings(){
-        for( let i=0;i<element.length;i++){
-            if(i!=3){
-                element[i].style.display="none";
-            } else{
-                element[i].style.display="block";
-            }
-        }
-    }
+    // function clickProfiles(){
+    //     for( let i=0;i<element.length;i++){
+    //         if(i!=1){
+    //             element[i].style.display="none";
+    //         } else{
+    //             element[i].style.display="block";
+    //         }
+    //     }
+    // }
+    // function clickMessages(){
+    //     for( let i=0;i<element.length;i++){
+    //         if(i!=2){
+    //             element[i].style.display="none";
+    //         } else{
+    //             element[i].style.display="block";
+    //         }
+    //     }
+    // }
+    // function clickSettings(){
+    //     for( let i=0;i<element.length;i++){
+    //         if(i!=3){
+    //             element[i].style.display="none";
+    //         } else{
+    //             element[i].style.display="block";
+    //         }
+    //     }
+    // }
 
 
 

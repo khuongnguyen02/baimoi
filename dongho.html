@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dong ho</title>
+</head>
+<body>
+<p>
+    <span id="min">10</span>:<span id="sec">00</span>
+    <button onclick="clock();">Start</button>
+</p>
+
+<script>
+
+function clock() {
+    let min = 9;
+    let sec = 59;
+    let clock = setInterval(function () {
+        document.getElementById("min").innerText = (min >= 10 ? min : "0" + min);
+        document.getElementById("sec").innerText = (sec >= 10 ? sec : "0" + sec);
+        sec--;
+        if (sec < 0) {
+            min--;
+            sec = 59;
+        }
+        if (min < 0) {
+            clearInterval(clock);
+        }
+    }, 100);
+}
+</script>
+
+</body>
+</html>

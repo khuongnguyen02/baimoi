@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab s9</title>
+    <link rel="stylesheet" type="text/css" href="css/labs9.css">
+</head>
+<body>
+<ul class="tab">
+    <li><a href="javascript:void(0)" onclick="navTab(0)">Home</a> </li>
+    <li><a href="javascript:void(0)" onclick="navTab(1)">Profile</a> </li>
+    <li><a href="javascript:void(0)" onclick="navTab(2)">Messages</a> </li>
+    <li><a href="javascript:void(0)" onclick="navTab(3)">Setting</a> </li>
+</ul>
+
+<div class="content">
+<!--    lo chieu-->
+    <div class="content_all" id="content_all">
+<!--        cuon phim-->
+    <div id="home" class="tab_content">Home content</div>
+    <div id="profile" class="tab_content">Profiles content</div>
+    <div id="messages" class="tab_content">Messages content</div>
+    <div id="setting" class="tab_content">Settings content</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function navTab(e) {
+        // let tabs = document.getElementsByClassName("tab_content");
+        // for(let i=0;i<tabs.length;i++){
+        //     tabs[i].style.display="none";
+        // }
+        // let id=e.getAttribute("href");//lay thong tin cua thuoc tinh
+        // id = id.replace("#","");//ham xu li chuoi, thay # bang cai khac
+        // document.getElementById(id).style.display="block";
+        document.getElementById("content_all").style.transform="translateX(-"+(e*400)+"px)";
+
+    }
+    // setTimeout(function () {
+    //          alert("co nguoi dot nhap");
+    // },3000);
+    // let f=0;
+    // var stv= setInterval(function () {
+    //           alert("1 ng vua vao web");
+    //           f++;
+    //           if(f>4){
+    //               clearInterval(stv);//xoa chinh no
+    //           }
+    // },3000)
+
+    // var min=9;
+    // var sec=59;
+    //
+    // var clock=setInterval(function () {
+    //           let min_txt=min>=10?min:"0"+min;//tuong duong cau if
+    //           let sec_txt=sec>=10?sec: "0"+sec;
+    //           console.log(min_txt+":"+sec_txt);
+    //           sec--;
+    //           if(sec<0){
+    //               min--;
+    //               sec=59;
+    //           }
+    //           if(min<0){
+    //               clearInterval(clock);
+    //           }
+    // },100)
+
+
+
+</script>
+
+
+
+</body>
+</html>
