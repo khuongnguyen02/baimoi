@@ -9,23 +9,46 @@
 <body>
 <div class="banner">
     <div class="banner_slide">
+        <button class="button_left" onclick="prev()"><i class="fa fa-angle-left"></i></button>
         <div class="slide_content">
-            <div class="slide"> Content 1</div>
-            <div class="slide"> Content 2</div>
-            <div class="slide"> Content 3</div>
+            <img id="slider" src="img/download (2).jpg" height="225" width="225"/>
         </div>
-        <button class="button_left" onclick="navTab(e)"><i class="fa fa-angle-left"></i></button>
-        <button class="button_right" onclick="navTab(e)"><i class="fa fa-angle-right"></i></button>
+
+        <button class="button_right" onclick="next()"><i class="fa fa-angle-right"></i></button>
+        <h1 style="float: left; margin-left: 60px;margin-top: 50px"> Logo các trường chuyên ở Hà Nội</h1>
     </div>
 
 </div>
 
 <script type="text/javascript">
-    function navTab(e) {
-        document.getElementById("slide").style.transform = "translateX(-" + (e * 400) + "px)";
+    var slides= [
+        "img/download (1).jpg",
+        "img/images.png",
+        "img/download (3).jpg",
+        "img/download (2).jpg"
+    ];
+    var num = 0;
 
+    function next() {
+        var slider = document.getElementById("slider");
+        num++;
+        if(num >= slides.length) {
+            num = 0;
+        }
+        slider.src = slides[num];//cái này là để chạy cái src ứng với cái phần tử link trước hoặc sau nó.
     }
-</script>
+
+    function prev() {
+        var slider = document.getElementById("slider");
+        num--;
+        if(num < 0) {
+            num = slides.length-1;//chạy lại từ slide cuối lui khi mà num<0.
+        }
+        slider.src = slides[num];
+    }
+
+
+    </script>
 
 </body>
 </html>
